@@ -2,6 +2,7 @@ package com.jrp.springdemo.web;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -27,7 +28,8 @@ public class HelloController {
     }
 
     @RequestMapping(value = "/user_greeting", method = RequestMethod.POST)
-    public String processForm() {
-        return "<h1 style='color:green'>Form Submitted Successfully</h1>";
+    public String processForm(@RequestParam (value = "fname") String first, @RequestParam(value = "lname") String last) {
+        return "<div style='color:green'><h1>Form Submitted Successfully</h1><p>Name: "
+                + first + " "  + last + "</p></div>";
     }
 }
