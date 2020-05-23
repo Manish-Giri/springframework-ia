@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Result Page</title>
+    <style>
+        h1 {
+            color: rebeccapurple;
+        }
+
+        p {
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+<h1>Form submitted successfully</h1>
+<p>Name: <span th:text="${user.fullName}"></span></p>
+<p>Age: <span th:text="${user.age}"></span></p>
+<p>Employed: <span th:text="${user.employed}"></span></p>
+<p>Gender: <span th:text="${user.gender}"></span></p>
+</body>
+</html>

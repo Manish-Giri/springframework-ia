@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <style>
+       h1,h2 {
+           color: rebeccapurple;
+       }
+    </style>
+</head>
+<body>
+<h1>This is home page</h1>
+
+<h2>Enter data below</h2>
+<form action="/create" method="post" th:object="${userData}">
+    <p><label>
+        Full Name<input type="text" th:field="${userData.fullName}" />
+    </label></p>
+
+    <p><label>
+        Age <input type="text" th:field="${userData.age}" />
+    </label></p>
+
+
+    <p><label>
+        Employed? <input type="checkbox" th:field="${userData.employed}"/>
+    </label></p>
+
+    <p> Gender
+        <label>
+            Male
+            <input type="radio" th:field="${userData.gender}" th:value="Male"/>
+        </label>
+        <label>
+            Female
+            <input type="radio" th:field="${userData.gender}" th:value="Female"/>
+        </label>
+    </p>
+
+    <input type="submit" value="Submit"/><br>
+    <input type="reset" value="Reset"/>
+
+</form>
+</body>
+</html>
