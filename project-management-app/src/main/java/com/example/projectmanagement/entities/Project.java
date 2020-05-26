@@ -1,7 +1,13 @@
 package com.example.projectmanagement.entities;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 public class Project {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long projectId;
 
     private String name;
