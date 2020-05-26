@@ -6,27 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
 
 </head>
 <body>
-<nav th:replace="layouts :: navbar"></nav>
 
 <div class="container">
-    <form action="/projects/save" th:object="${project}" method="POST" class="form-control">
+    <form action="/projects/save" method="POST" >
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Project Name">
+        </div>
+        <div class="form-group">
+            <select>
+                <option th:value="NOTSTARTED"> Not Started</option>
+                <option th:value="INPROGRESS"> In Progress</option>
+                <option th:value="COMPLETED"> Completed</option>
+            </select>
+        </div>
 
-        <input type="text" placeholder="Project Name" th:field="*{name}">
+        <div class="form-group">
+            <textarea type="text" placeholder="Enter Project Description" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Create Project</button>
+        </div>
 
-        <select th:field="${project.stage}">
-            <option th:value="NOTSTARTED"> Not Started</option>
-            <option th:value="INPROGRESS"> In Progress</option>
-            <option th:value="COMPLETED"> Completed</option>
-        </select>
 
-        <textarea type="text" placeholder="Enter Project Description" th:field="${project.description}"></textarea>
 
-        <button type="submit">Create Project</button>
 
     </form>
 </div>
