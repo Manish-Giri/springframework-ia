@@ -25,9 +25,9 @@ public class HelloController {
     }
 
     @RequestMapping(value = "/user_greeting", method = RequestMethod.POST)
-    public String processForm(@RequestParam (value = "fname") String first, @RequestParam(value = "lname") String last) {
+    public String processForm(@RequestParam(value = "fname") String first, @RequestParam(value = "lname") String last) {
         return "<div style='color:green'><h1>Form Submitted Successfully</h1><p>Name: "
-                + first + " "  + last + "</p></div>";
+                + first + " " + last + "</p></div>";
     }
     /*
     @RequestMapping("/order_entry")
@@ -42,7 +42,7 @@ public class HelloController {
     }*/
 
     @RequestMapping(value = "/orders/{id}", method = RequestMethod.GET)
-    public String processOrder(@PathVariable (value = "id") String orderId) {
+    public String processOrder(@PathVariable(value = "id") String orderId) {
         return "<div style='color:green'><h1>Order Received Successfully</h1><p>Order ID: "
                 + orderId + "</p></div>";
     }
