@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>App Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+<body>
+
+<div class="container">
+    <h2>Current Projects</h2>
+
+    <table class="table table-dark">
+        <thead class="thead-dark">
+        <tr>
+<!--            <th scope="col">#</th>-->
+            <th scope="col">Project Name</th>
+            <th scope="col">Project Stage</th>
+            <th scope="col">Project Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="aProject: ${projects}">
+<!--            <th scope="row">1</th>-->
+            <td th:text="${aProject.name}"/>
+            <td th:text="${aProject.stage}"/>
+            <td th:text="${aProject.description}"/>
+        </tr>
+
+        </tbody>
+    </table>
+
+    <hr>
+</div>
+</body>
+</html>
