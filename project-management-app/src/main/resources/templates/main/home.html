@@ -12,7 +12,8 @@
 <body>
 
 <div class="container">
-    <h2>Current Projects</h2>
+    <h1>Welcome to Project Management Application</h1>
+    <h3>Current Projects</h3>
 
     <table class="table table-dark">
         <thead class="thead-dark">
@@ -24,11 +25,11 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="aProject: ${projects}">
+        <tr th:each="aProject: ${projectList}">
 <!--            <th scope="row">1</th>-->
-            <td th:text="${aProject.name}"/>
-            <td th:text="${aProject.stage}"/>
-            <td th:text="${aProject.description}"/>
+            <td th:text="${aProject.name}"></td>
+            <td th:text="${aProject.stage}"></td>
+            <td th:text="${aProject.description}"></td>
         </tr>
 
         </tbody>
