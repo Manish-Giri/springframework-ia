@@ -13,28 +13,46 @@
 <body>
 
 <div class="container">
+    <nav th:replace="layouts::navbar"></nav>
     <form action="/projects/save" th:object="${project}" method="POST" >
-        <div class="form-group">
-            <input type="text" th:field="*{name}" class="form-control" placeholder="Project Name">
-        </div>
-        <div class="form-group">
-            <select th:field="${project.stage}">
-                <option th:value="NOTSTARTED"> Not Started</option>
-                <option th:value="INPROGRESS"> In Progress</option>
-                <option th:value="COMPLETED"> Completed</option>
-            </select>
-        </div>
 
-        <div class="form-group">
-            <textarea th:field="${project.description}" type="text"
-                      placeholder="Enter Project Description" class="form-control"></textarea>
-        </div>
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary">Create Project</button>
+
+        <div class="form-group row">
+            <label for="pname" class="col-sm-2 col-form-label">Project Name</label>
+            <div class="col-sm-10">
+                <input type="text" th:field="*{name}" class="form-control" id="pname" placeholder="Project Name">
+            </div>
+
         </div>
 
 
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="inlineFormCustomSelect">Project Stage</label>
+            <div class="col-sm-10">
 
+                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" th:field="${project.stage}">
+
+                    <option th:value="NOTSTARTED"> Not Started</option>
+                    <option th:value="INPROGRESS"> In Progress</option>
+                    <option th:value="COMPLETED"> Completed</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label for="pdesc" class="col-sm-2 col-form-label">Project Description</label>
+            <div class="col-sm-10">
+                <textarea th:field="${project.description}" type="text"
+                          placeholder="Enter Project Description" class="form-control" id="pdesc"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Create Project</button>
+            </div>
+        </div>
 
     </form>
 </div>
