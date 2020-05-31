@@ -36,6 +36,29 @@
     </table>
 
     <hr>
+
+    <h3>Current Employees</h3>
+
+    <table class="table table-dark">
+        <thead class="thead-dark">
+        <tr>
+            <!--            <th scope="col">#</th>-->
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="anEmployee: ${employeeList}">
+            <!--            <th scope="row">1</th>-->
+            <td th:text="${anEmployee.firstName}"></td>
+            <td th:text="${anEmployee.lastName}"></td>
+            <td th:text="${anEmployee.email}"></td>
+        </tr>
+
+        </tbody>
+    </table>
+
 </div>
 </body>
 </html>
