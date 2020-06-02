@@ -16,6 +16,13 @@ public class ProjectController {
     @Autowired
     ProjectRepository projectRepository;
 
+    @GetMapping
+    public String displayProjects(Model model) {
+        // return list of employees to /projects
+        model.addAttribute("projects", projectRepository.findAll());
+        return "projects/list-projects";
+    }
+
     @GetMapping("/new")
     public String displayProjectForm(Model model) {
         model.addAttribute("project", new Project());
